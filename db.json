@@ -1,0 +1,86 @@
+{
+  "tasks": [
+    {
+      "id": 5,
+      "name": "Anthea Pundy",
+      "username": "apundy4",
+      "title": "Software Engineer III",
+      "value": 177.19,
+      "date": "2021-01-01T14:09:51Z",
+      "image": "https://robohash.org/quiaautomnis.png?size=150x150&set=set1",
+      "isPayed": true
+    },
+    {
+      "id": 6,
+      "name": "Marcus Bellamy",
+      "username": "mbellamy5",
+      "title": "Product Manager",
+      "value": 220.5,
+      "date": "2023-03-12T08:15:00Z",
+      "image": "https://robohash.org/marcusbellamy.png?size=150x150&set=set1",
+      "isPayed": false
+    },
+    {
+      "id": 7,
+      "name": "Lucia Hale",
+      "username": "lhale6",
+      "title": "Quality Assurance Specialist",
+      "value": 98.75,
+      "date": "2022-11-30T18:45:25Z",
+      "image": "https://robohash.org/luciahale.png?size=150x150&set=set1",
+      "isPayed": true
+    },
+    {
+      "id": 8,
+      "name": "Elliot Andrews",
+      "username": "eandrews7",
+      "title": "DevOps Engineer",
+      "value": 310.0,
+      "date": "2020-06-20T09:30:15Z",
+      "image": "https://robohash.org/elliotandrews.png?size=150x150&set=set1",
+      "isPayed": true
+    },
+    {
+      "id": 9,
+      "name": "Sophia Grant",
+      "username": "sgrant8",
+      "title": "Frontend Developer",
+      "value": 140.9,
+      "date": "2024-04-15T14:05:00Z",
+      "image": "https://robohash.org/sophiagrant.png?size=150x150&set=set1",
+      "isPayed": false
+    },
+    {
+      "id": 10,
+      "name": "Benjamin Carter",
+      "username": "bcarter9",
+      "title": "Backend Developer",
+      "value": 190.25,
+      "date": "2023-09-25T21:00:00Z",
+      "image": "https://robohash.org/benjamincarter.png?size=150x150&set=set1",
+      "isPayed": true
+    }
+  ],
+
+  "account": [
+      { 
+        "email": "usuario@gmail.com", 
+        "password": "usuario" 
+      },
+      { 
+        "email": "admin@example.com", 
+        "password": "admin123" 
+      },
+      { 
+        "email": "johndoe@test.com", 
+        "password": "johnpassword" 
+      },
+      {
+        "email": "a@a.com",
+        "password": "123abc"
+      }
+    ]
+}
+
+
+  

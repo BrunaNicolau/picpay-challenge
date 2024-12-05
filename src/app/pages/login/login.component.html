@@ -1,0 +1,57 @@
+<div class="container">
+  <form [formGroup]="authForm" (ngSubmit)="logar(authForm.value)">
+    <div class="login">
+      <div class="alignCenter">
+        <h1 class="circle">Logo</h1>
+      </div>
+      <mat-grid-list cols="1" rowHeight="100px" class="alingForm">
+        <mat-grid-tile class="alingLine">
+          <mat-form-field class="fullWidth">
+            <mat-label>E-mail</mat-label>
+            <input matInput formControlName="userEmail" />
+            <mat-error
+              *ngIf="authForm.controls['userEmail'].hasError('required')"
+            >
+              E-mail é obrigatório
+            </mat-error>
+          </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile class="alingLine">
+          <mat-form-field class="fullWidth">
+            <mat-label>Senha</mat-label>
+            <input
+              matInput
+              formControlName="password"
+              [type]="hidePassword ? 'password' : 'text'"
+            />
+            <mat-icon matSuffix (click)="hidePassword = !hidePassword">{{
+              hidePassword ? "visibility_off" : "visibility"
+            }}</mat-icon>
+            <mat-error
+              *ngIf="authForm.controls['password'].hasError('required')"
+            >
+              Senha é obrigatório
+            </mat-error>
+          </mat-form-field>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+      <mat-grid-list cols="1" rowHeight="100px" class="alingForm">
+        <mat-error *ngIf="showLoginError" class="pt-5 alignCenter">
+          E-mail ou Senha incorreto
+        </mat-error>
+
+        <div class="alignCenter pt-5">
+          <button
+            mat-raised-button
+            type="submit"
+            [disabled]="!authForm.valid"
+          >
+            Confirmar
+          </button>
+        </div>
+      </mat-grid-list>
+    </div>
+  </form>
+</div>
