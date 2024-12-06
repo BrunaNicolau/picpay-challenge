@@ -6,7 +6,7 @@ import { map, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthenticationService {
-  //TODO: chamar o back direto no localhost
+  //TODO: chamar o back sem ser direto no localhost
   constructor(private http: HttpClient) {}
 
   public listLogin() {

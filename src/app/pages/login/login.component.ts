@@ -52,7 +52,7 @@ export class LoginComponent {
         this.isUserValid(res, userData) ? this.router.navigate(['payments']) : this.showLoginError = true
       },
       error(err) {
-        console.log('tratar o login error')
+        console.log('tratar o login error', err)
       },
     })
   }

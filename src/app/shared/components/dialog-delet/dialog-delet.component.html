@@ -1,0 +1,16 @@
+<h2 mat-dialog-title>Deletar Pagamento</h2>
+<mat-dialog-content>
+  <h3>Você tem certeza que deseja excluir o seguinte pagamento?</h3>
+  <span class="line">Nome: {{ dataToView.selectPayment.name }}</span>
+  <span class="line">Valor: {{ dataToView.selectPayment.value }}</span>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Não</button>
+  <button
+    mat-button
+    cdkFocusInitial
+    (click)="callDeletPayment(dataToView.selectPayment.id)"
+  >
+    Sim
+  </button>
+</mat-dialog-actions>
