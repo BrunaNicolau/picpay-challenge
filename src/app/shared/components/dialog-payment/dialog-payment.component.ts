@@ -1,6 +1,7 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  inject,
   Inject,
   OnInit,
 } from '@angular/core';
@@ -20,6 +21,8 @@ import {
 } from '@angular/forms';
 import { PaymentsService } from '../../../services/payments/payments.service';
 import { CommonModule } from '@angular/common';
+import { DialogDeletComponent } from '../dialog-delet/dialog-delet.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-dialog-payment',
   standalone: true,
@@ -37,6 +40,8 @@ import { CommonModule } from '@angular/common';
 })
 export class DialogPaymentComponent implements OnInit {
   formData: FormGroup;
+  readonly dialogRef = inject(MatDialogRef<DialogDeletComponent>);
+  private _snackBar = inject(MatSnackBar);
 
   constructor(
     private fb: FormBuilder,
@@ -53,6 +58,7 @@ export class DialogPaymentComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.dataToView.edit) this.fillFields();
+    this.dataToView.title = 'Adicionar Pagamento'
   }
 
   fillFields() {
@@ -72,15 +78,31 @@ export class DialogPaymentComponent implements OnInit {
     const paymentId = this.dataToView.selectPayment.id;
     this.paymentsService.editPayment(paymentId, this.formData.value).subscribe({
       next: (res) => {
-        console.log(res);
+        this.dialogRef.close()
+        this.showSnackBar('Editado com sucesso !')
       },
-      error: (err) => {
-        console.log(err);
+      error: () => {
+        this.showSnackBar('Não foi possive editar os dados, tente novamente !')
       },
     });
   }
 
   callAddPayment() {
-    console.log('fazer a chamada para o post');
+    const newPayment = this.formData.value
+    this.paymentsService.addPayment(newPayment).subscribe({
+      next: () => {
+        this.dialogRef.close()
+        this.showSnackBar('Adicionado com sucesso !')
+      },
+      error: () => {
+        this.showSnackBar('Não foi possive adcionar o pagamento, tente novamente !')
+      },
+    })
+  }
+
+  showSnackBar(txt: string){
+    this._snackBar.open(txt, 'Fechar', {
+      duration: 5000
+    });
   }
 }

@@ -14,3 +14,13 @@
   width: 80%;
   max-width: 100%;
 }
+
+.alignEnd {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+}
+
+.px-2 {
+  padding: 2%;
+}

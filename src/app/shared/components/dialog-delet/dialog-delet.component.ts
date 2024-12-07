@@ -44,12 +44,17 @@ export class DialogDeletComponent implements OnInit{
     this.paymentsService.deletPayment(id).subscribe({
       next: () => {
         this.dialogRef.close()
-        this._snackBar.open('Apagado com sucesso !');
+        this.showSnackBar('Apagado com sucesso !')
       }, 
       error: () => {
-        this._snackBar.open('Não foi possive apagar, tente novamente !');
+        this.showSnackBar('Não foi possive apagar, tente novamente !')
       },
     })
   }
 
+  showSnackBar(txt: string){
+    this._snackBar.open(txt, 'x', {
+      duration: 5000
+    });
+  }
 }

@@ -1,9 +1,19 @@
 .form-container {
   display: flex;
   flex-direction: column;
-  gap: 1rem; /* Espaçamento entre os campos */
+  gap: 1rem; 
 }
 
 mat-form-field {
-  width: 100%; /* Faz os campos ocuparem toda a largura do contêiner */
+  width: 100%; 
+}
+
+.alignCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pb-5 {
+  padding-bottom: 5%;
 }

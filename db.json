@@ -1,41 +1,11 @@
 {
   "tasks": [
     {
-      "id": "5",
-      "name": "Anthea Pundy",
-      "username": "apundy5",
-      "title": "Software Engineer III",
-      "value": 177.29,
-      "date": "2021-01-01T14:09:51Z",
-      "image": "https://robohash.org/quiaautomnis.png?size=150x150&set=set1",
-      "isPayed": true
-    },
-    {
-      "id": "6",
-      "name": "Marcus Bellamy",
-      "username": "mbellamy5",
-      "title": "Product Manager",
-      "value": 220.5,
-      "date": "2023-03-12T08:15:00Z",
-      "image": "https://robohash.org/marcusbellamy.png?size=150x150&set=set1",
-      "isPayed": false
-    },
-    {
-      "id": "7",
-      "name": "Lucia Hale",
-      "username": "lhale6",
-      "title": "Quality Assurance Specialist",
-      "value": 98.75,
-      "date": "2022-11-30T18:45:25Z",
-      "image": "https://robohash.org/luciahale.png?size=150x150&set=set1",
-      "isPayed": true
-    },
-    {
       "id": "8",
       "name": "Elliot Andrews",
       "username": "eandrews7",
       "title": "DevOps Engineer",
-      "value": 310,
+      "value": 3180,
       "date": "2020-06-20T09:30:15Z",
       "image": "https://robohash.org/elliotandrews.png?size=150x150&set=set1",
       "isPayed": true
@@ -59,6 +29,27 @@
       "date": "2023-09-25T21:00:00Z",
       "image": "https://robohash.org/benjamincarter.png?size=150x150&set=set1",
       "isPayed": true
+    },
+    {
+      "id": "8b27",
+      "name": "bruna ",
+      "title": "teste",
+      "date": "12312-03-12",
+      "value": 76786876
+    },
+    {
+      "id": "c4f1",
+      "name": "teste debugger",
+      "title": "hsdgjhdsgfjh",
+      "date": "2010-10-10",
+      "value": 213213
+    },
+    {
+      "id": "031d",
+      "name": "teste novo",
+      "title": "dvfsdfdse",
+      "date": "2001-12-10",
+      "value": 3434
     }
   ],
   "account": [
