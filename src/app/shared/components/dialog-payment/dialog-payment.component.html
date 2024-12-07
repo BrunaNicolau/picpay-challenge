@@ -25,6 +25,15 @@
       <input matInput type="number" formControlName="value" placeholder="Digite o valor" />
       <mat-error *ngIf="formData.get('value')?.hasError('required')">Valor é obrigatório</mat-error>
     </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Pago</mat-label>
+      <mat-select formControlName="isPayed">
+        <mat-option [value]="true">True</mat-option>
+        <mat-option [value]="false">False</mat-option>
+      </mat-select>
+      <mat-error *ngIf="formData.get('isPayed')?.hasError('required')">Valor é obrigatório</mat-error>
+    </mat-form-field>
   </form>
 </mat-dialog-content>
 

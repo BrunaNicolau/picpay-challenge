@@ -23,6 +23,9 @@ import { PaymentsService } from '../../../services/payments/payments.service';
 import { CommonModule } from '@angular/common';
 import { DialogDeletComponent } from '../dialog-delet/dialog-delet.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Payment } from '../../interface/payment.interface';
+import { MatSelectModule } from '@angular/material/select';
+
 @Component({
   selector: 'app-dialog-payment',
   standalone: true,
@@ -33,6 +36,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     MatInputModule,
     ReactiveFormsModule,
     CommonModule,
+    MatSelectModule
   ],
   templateUrl: './dialog-payment.component.html',
   styleUrl: './dialog-payment.component.css',
@@ -53,6 +57,7 @@ export class DialogPaymentComponent implements OnInit {
       title: ['', Validators.required],
       date: ['', Validators.required],
       value: ['', Validators.required],
+      isPayed: ['', Validators.required]
     });
   }
 
@@ -63,7 +68,11 @@ export class DialogPaymentComponent implements OnInit {
 
   fillFields() {
     this.dataToView.title = 'Editar o Pagamento';
+    const formattedDate = this.dataToView.selectPayment.date.split('T')[0];
     this.formData.patchValue(this.dataToView.selectPayment);
+    this.formData.patchValue({
+      date: formattedDate
+    })
   }
 
   callService() {
@@ -88,7 +97,7 @@ export class DialogPaymentComponent implements OnInit {
   }
 
   callAddPayment() {
-    const newPayment = this.formData.value
+    const newPayment: Payment = this.formData.value
     this.paymentsService.addPayment(newPayment).subscribe({
       next: () => {
         this.dialogRef.close()
@@ -101,7 +110,7 @@ export class DialogPaymentComponent implements OnInit {
   }
 
   showSnackBar(txt: string){
-    this._snackBar.open(txt, 'Fechar', {
+    this._snackBar.open(txt, 'x', {
       duration: 5000
     });
   }

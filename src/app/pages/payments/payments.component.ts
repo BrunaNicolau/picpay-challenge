@@ -14,6 +14,7 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { DialogDeletComponent } from '../../shared/components/dialog-delet/dialog-delet.component';
 import { DialogPaymentComponent } from '../../shared/components/dialog-payment/dialog-payment.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @Component({
   selector: 'app-payments',
@@ -28,13 +29,14 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     MatSortModule,
     MatInputModule,
     MatFormFieldModule,
+    MatCheckboxModule
   ],
   templateUrl: './payments.component.html',
   styleUrl: './payments.component.css',
 })
 
 export class PaymentsComponent implements OnInit {
-  displayedColumns = ['Usuário', 'Título', 'Data', 'Valor', 'Ações'];
+  displayedColumns = ['Usuário', 'Título', 'Data', 'Valor', 'Pago','Ações'];
   showtable: boolean = false;
   dataSource: MatTableDataSource<Payment> = new MatTableDataSource();
   dialog = inject(MatDialog);
@@ -48,7 +50,7 @@ export class PaymentsComponent implements OnInit {
   ngOnInit(): void {
     this.callPaymentList();
   }
-
+  
   callPaymentList() {
     this.paymentsService.listPayment().subscribe({
       next: (res) => {
@@ -58,13 +60,13 @@ export class PaymentsComponent implements OnInit {
         this.showtable = true;
       },
       error: () => {
-        this._snackBar.open('Não foi possível carregar os pagamentos, tente novamente!', 'Fechar', {
+        this._snackBar.open('Não foi possível carregar os pagamentos, tente novamente!', 'x', {
           duration: 5000
         });
       },
     });
   }
-
+  
   applyFilter(event: Event): void {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
